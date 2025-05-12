@@ -1,0 +1,14 @@
+#!/user/bin/expect -f
+
+send_user "Enter The Number: "
+
+expect_user -re ".*\n"
+set num $expect_out(buffer)
+
+scan $num "%d" num_int
+
+if {[expr {$num_int % 2}] == 0} {
+    send_user "The Number Is even\n"
+} else {
+    send_user "the Number is odd\n"
+}
