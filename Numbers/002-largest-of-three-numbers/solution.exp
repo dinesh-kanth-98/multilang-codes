@@ -1,0 +1,26 @@
+#!/usr/bin/expect
+
+send_user "Enter first number: "
+expect_user -re "(.*)\n"
+set num1 $expect_out(1,string)
+
+send_user "Enter second number: "
+expect_user -re "(.*)\n"
+set num2 $expect_out(1,string)
+
+send_user "Enter third number: "
+expect_user -re "(.*)\n"
+set num3 $expect_out(1,string)
+
+#convert inputs to numbers
+set num1 [expr {$num1 + 0}]
+set num2 [expr {$num2 + 0}]
+set num3 [expr {$num3 + 0}]
+
+if { $num1 >= $num2 && $num1 >= $num3 } {
+    send_user "$num1 is the largest number.\n"
+} elseif { $num2 >= $num1 && $num2 >= $num3 } {
+    send_user "$num2 is the largest number.\n"
+} else {
+    send_user "$num3 is the largest number.\n"
+}
