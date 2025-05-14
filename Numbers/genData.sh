@@ -91,13 +91,13 @@ main() {
         fi
     done
 
-    # Copy generate_solutions_md.sh into the folder
-    if cp "generate_solutions_md.sh" "$folder_name/"; then
-        echo "✅ Copied generate_solutions_md.sh to $folder_name/"
-    else
-        echo "❌ Failed to copy generate_solutions_md.sh to $folder_name/"
-        exit 1
-    fi
+#     # Copy generate_solutions_md.sh into the folder
+#     if cp "generate_solutions_md.sh" "$folder_name/"; then
+#         echo "✅ Copied generate_solutions_md.sh to $folder_name/"
+#     else
+#         echo "❌ Failed to copy generate_solutions_md.sh to $folder_name/"
+#         exit 1
+#     fi
 
     # Generate README.md with GitHub links
     {
